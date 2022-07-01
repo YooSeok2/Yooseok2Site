@@ -1,28 +1,71 @@
 @import 
  './variables.scss',
  './reset.scss';
- 
 
 .home{
     height: 100vh;
-    background: bg2;
+    background: $bg1;
 }
 .about{
     height: 800px;
+    background: $bg2;
 }
 .skils{
-    height: 500px;
+    height: 800px;
+    background: $bg1;
 }
+
+.career{
+    height: 800px;
+    background: $bg2;
+}
+
 .anim-box > div{
     width: 200px;
     height: 200px;
     box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
     background: #fff;
 }
-.anim-container{
+
+.anim-box{
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(row, center, center);
+}
+
+.header{
+    position: fixed;
+    @include position(0,0,'',0);
+    width: 100%;
+    z-index: 2000;
+    border: 0;
+    background: $bg1;
+}
+
+.header-wrap{
+    width: 70vw;
+    height: 70px;
+    margin: 0 auto;
+    @include flex(row, space-between,center);
+}
+
+.header-menu{
+    @include flex(row, space-between, center);
+    @include font(20px, 700);
+    width: 300px;
+
+    & li {
+        cursor: pointer;
+        padding: 12px 10px;
+        border-radius: 10px;
+    }
+
+    & li:hover{
+        background-color: var(--greyOpacity100);
+    }
+}
+
+.logo{
+    @include font(22px, 800);
+    cursor: pointer;
 }
