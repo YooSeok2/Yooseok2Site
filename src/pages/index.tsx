@@ -1,13 +1,10 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/app.scss';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import useMoveScroll from '../hooks/menuHooks';
+import TestImg from '../images/test_img.png';
 
-/*
-
-*/
-// markup
 export interface MoveMethods {
   onMoveHome: () => void,
   onMoveAbout: () => void,
@@ -25,6 +22,14 @@ function IndexPage() {
     <main className="main">
       <Header onMoveHome={onMoveHome} onMoveAbout={onMoveAbout} onMoveSkils={onMoveSkils} onMoveCareer={onMoveCareer} />
       <div className="home" ref={homeRef}>
+        <div className="img-div">
+          <img
+            src={TestImg}
+            width={100}
+            height={100}
+            alt="test"
+          />
+        </div>
         <div className="anim-box">
           <motion.div
             animate={{
