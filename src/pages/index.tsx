@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../styles/app.scss';
-import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import useMoveScroll from '../hooks/menuHooks';
-import TestImg from '../images/test_img.png';
+import TestImg from '../images/Home_perspective_matte.png';
+import OpacityBox from '../components/framer/OpacityBox';
+import ScrollBox from '../components/framer/ScrollBox';
 
 export interface MoveMethods {
   onMoveHome: () => void,
@@ -25,27 +26,33 @@ function IndexPage() {
         <div className="img-div">
           <img
             src={TestImg}
-            width={100}
-            height={100}
+            width={80}
+            height={80}
             alt="test"
           />
+          <div className="text-box">
+            <h4>안녕하세요!</h4>
+            <p>밤 하늘의 빛나는 별을 부르는 가수</p>
+          </div>
         </div>
         <div className="anim-box">
-          <motion.div
-            animate={{
-              scale: [0, 2],
-              opacity: [0, 1],
-              borderRadius: ['50%', '20%', '5%'],
-            }}
-            transition={{
-              duration: 1,
-              ease: 'easeInOut',
-            }}
-          />
+          <OpacityBox className="big-box">
+            <span>박스1</span>
+          </OpacityBox>
+          <div className="anim-boxs">
+            <OpacityBox>
+              <span>박스2</span>
+            </OpacityBox>
+            <OpacityBox>
+              <span>박스3</span>
+            </OpacityBox>
+          </div>
         </div>
       </div>
       <div className="about" ref={aboutRef}>
-        About
+        <ScrollBox>
+          <h4>hi</h4>
+        </ScrollBox>
       </div>
       <div className="skils" ref={skilsRef}>
         Skils

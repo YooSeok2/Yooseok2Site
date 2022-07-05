@@ -185,3 +185,8 @@ $desktop: 1024px;
       font-weight: $weight;
     }
 }
+
+@mixin animBox {
+  box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
+  background: #fff;
+}

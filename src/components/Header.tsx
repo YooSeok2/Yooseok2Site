@@ -15,6 +15,7 @@ function Header({ onMoveHome, onMoveAbout, onMoveSkils, onMoveCareer }: MoveMeth
       }
     }
     const options:any = { passive: true };
+
     window.addEventListener('scroll', onScroll, options);
     return () => {
       window.removeEventListener('scroll', onScroll, options);

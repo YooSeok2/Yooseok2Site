@@ -53,5 +53,6 @@ module.exports = {
     'keyword-spacing': [2, { before: true, after: true }],
     'import/prefer-default-export': 0,
     'jsx-a11y/no-noninteractive-element-interactions': 0,
+    'react/require-default-props': 0,
   },
 };
