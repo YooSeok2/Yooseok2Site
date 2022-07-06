@@ -1,8 +1,10 @@
 import React, { useCallback } from 'react';
 import { motion, Variants } from 'framer-motion';
+import { MotionDiv } from '../StyleComponents';
 
 type Props= {
   children: React.ReactNode;
+  className?: string
 }
 
 const cardVariants: Variants = {
@@ -16,7 +18,7 @@ const cardVariants: Variants = {
     transition: {
       type: 'spring',
       bounce: 0,
-      duration: 1.5,
+      duration: 1,
     },
   },
   hover: {
@@ -24,7 +26,7 @@ const cardVariants: Variants = {
   },
 };
 
-function ScrollBox({ children }:Props) {
+function ScrollBox({ children, className }:Props) {
   const onClickBox = useCallback((event, info) => {
     console.log('Click box');
   }, []);
@@ -37,12 +39,12 @@ function ScrollBox({ children }:Props) {
       onTap={onClickBox}
       viewport={{ once: true, amount: 0.8 }}
     >
-      <motion.div
-        className="about-anim-box"
+      <MotionDiv
+        className={className}
         variants={cardVariants}
       >
         {children}
-      </motion.div>
+      </MotionDiv>
     </motion.div>
   );
 }
