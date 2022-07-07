@@ -4,8 +4,10 @@ import Header from '../components/Header';
 import useMoveScroll from '../hooks/menuHooks';
 import HomeImg from '../images/home.png';
 import SkilImg from '../images/skill.png';
+import CareerImg from '../images/employment.png';
 import OpacityBox from '../components/framer/OpacityBox';
 import ScrollBox from '../components/framer/ScrollBox';
+import CareerSwiper from '../components/swiper/CareerSwiper';
 
 export interface MoveMethods {
   onMoveHome: () => void,
@@ -55,26 +57,37 @@ function IndexPage() {
           <div className="skils-title">
             <img
               src={SkilImg}
-              width={50}
-              height={50}
-              alt="홈"
+              width={45}
+              height={45}
+              alt="기술"
             />
-            <h4>기술</h4>
+            <h4>가나</h4>
           </div>
           <div className="skils-cont">
-            <ScrollBox>
+            <ScrollBox className="scroll-box skilbox1" duration={0.8}>
               <h4>hi</h4>
             </ScrollBox>
-            <ScrollBox>
+            <ScrollBox className="scroll-box skilbox2" duration={1.2}>
               <h4>hi</h4>
             </ScrollBox>
-            <ScrollBox>
+            <ScrollBox className="scroll-box skilbox3" duration={1.5}>
               <h4>hi</h4>
             </ScrollBox>
           </div>
         </div>
         <div className="career" ref={careerRef}>
-          Career
+          <div className="career-title">
+            <img
+              src={CareerImg}
+              alt="경력"
+              width={60}
+              height={60}
+            />
+            <h4>다라</h4>
+          </div>
+          <div className="career-swiper">
+            <CareerSwiper />
+          </div>
         </div>
         <div className="about" ref={aboutRef}>
           Skils

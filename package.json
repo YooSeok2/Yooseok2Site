@@ -23,7 +23,8 @@
     "lodash": "^4.17.21",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "sass": "^1.53.0"
+    "sass": "^1.53.0",
+    "swiper": "^8.2.6"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.18.6",

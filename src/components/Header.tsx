@@ -26,9 +26,9 @@ function Header({ onMoveHome, onMoveAbout, onMoveSkils, onMoveCareer }: MoveMeth
       <div className="header-wrap">
         <div tabIndex={0} role="button" className="logo" onClick={onMoveHome}>LOGO</div>
         <ul className="header-menu">
-          <li onClick={onMoveAbout}>가나다</li>
           <li onClick={onMoveSkils}>라마</li>
           <li onClick={onMoveCareer}>바사아자</li>
+          <li onClick={onMoveAbout}>가나다</li>
         </ul>
       </div>
     </HeaderCont>

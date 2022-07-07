@@ -3,7 +3,7 @@
  './reset.scss';
 
 .main-body > div{
-    padding: 0 15%;
+    padding: 0 12%;
 }
 
 .home{
@@ -34,7 +34,7 @@
 .home-big-box{
     flex: 2;
     height: calc(100vh/1.5);
-    @include animBox;
+    @include shadowBox;
 }
 
 .home-anim-box{
@@ -48,7 +48,7 @@
         & > div {
             width: 250px;
             height: calc(100vh/5);
-            @include animBox;
+            @include shadowBox;
         }
 
         & > div:not(:first-child){
@@ -58,39 +58,115 @@
 }
 
 .skils{
-    height: 800px;
-    background: $bg2;
+    height: 1000px;
+    background: $bg1;
+    border-top: 15px solid var(--grey100);
     @include flex(column, '', center);
-    padding-top: 50px;
 
-    & .skils-title{
-        flex: 1;
-        @include flex(row, '', center);
+    & > .skils-title{
+        width: 100%;
+        height: 50px;
+        padding: 50px 0 60px;
+        @include flex(row, center, center);
         & > h4{
-            margin-left: 20px;
-            @include font(29px, 800);
+            margin-left: 15px;
+            @include font(35px, 800);
         }
     }
 
-    & .skils-cont{
-        flex: 4;
+    & > .skils-cont{
+        width: 100%;
+        flex: 1;
         @include flex(row, center, center);
+        & > div {
+            flex: 1;
+            padding: 0 40px;
+            height: 100%;
+        }
+        & .skilbox1 {
+            height: calc(100% - 50px);
+        }
+        & .skilbox2 {
+            height: calc(100% - 300px);
+        }
+        & .skilbox3 {
+            height: calc(100% - 150px);
+        }
     }
 }
 
+.career{
+    height: 1000px;
+    background: $bg1;
+    border-top: 15px solid var(--grey100);
+    @include flex(column, '', center);
+
+    & > .career-title{
+        width: 100%;
+        height: 50px;
+        padding: 50px 0;
+        @include flex(row, center, center);
+        & > h4{
+            margin-left: 15px;
+            @include font(35px, 800);
+        }
+    }
+
+    & > .career-swiper{
+        width: 100%;
+        flex: 1;
+        @include flex(row, center, center);
+    }
+
+    & .career-box{
+        width: 100%;
+        height: 100%;
+        @include flex(column, center, center);
+        @include shadowBox;
+        border-radius: 0;
+    }
+}
+
+/*  swiper */
+.swiper {
+    width: 90%;
+    height: calc(100% - 150px);
+    position: absolute;
+    margin-left: -150px;
+    margin-top: -150px;
+}
+
+.swiper-cube-shadow{
+    opacity: 0.3 !important;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets{
+    bottom: -60px !important;
+}
+
+.swiper-pagination-bullet{
+    width: 40px !important;
+    height: 5px !important;
+    border-radius: 0 !important;
+}
+
+.swiper-pagination-bullet-active{
+    background: $blue !important;
+}
+
+/*  swiper end */
+
+
 .scroll-box{
-    @include animBox;
+    @include shadowBox;
 }
 
 .about{
-    height: 800px;
+    height: 1000px;
     background: $bg2;
 }
 
-.career{
-    height: 800px;
-    background: $bg1;
-}
+
 
 .header{
     position: fixed;
